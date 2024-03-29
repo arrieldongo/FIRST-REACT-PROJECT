@@ -8,6 +8,7 @@ export default function Home() {
     < Seo title="first app react" description="content"/>
     <h1>Hello arriel</h1>
     <h1>Hello arriel</h1>
+    <h1>Hello arriel</h1>
   
   </>
    
