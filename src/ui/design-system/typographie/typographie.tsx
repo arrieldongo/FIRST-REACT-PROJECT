@@ -136,19 +136,18 @@ export const Typographie = ({
   }
 
 
-
  return <Component 
- className= {
-  clsx(
-    variantStyles,
-    colorStyles,
-    weight === "medium" && "font-medium",
-    className,
-  
-  )} >
+  className= {
+    clsx(
+      variantStyles,
+      colorStyles,
+      weight === "medium" && "font-medium",
+      className,
+    
+    )} >
 
 
-  {children}
+    {children}
 
  </Component>
 }

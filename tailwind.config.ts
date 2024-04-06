@@ -5,7 +5,7 @@ module.exports = {
   ],
   theme: {
     colors:{
-      white:"#fffff",
+      white:"#ffff",
       primary: {
         200: "#EFEFFC",
         300: "#CFD0F6", 
@@ -138,6 +138,11 @@ module.exports = {
         letterSpacing: '-0.2px',
         fontWeight: '400',
       }],
+    },
+    borderRadius: {
+      DEFAULT: '10px',
+      full: '9999px'
+
     },
     extend: {},
   },
