@@ -144,6 +144,7 @@ module.exports = {
       full: '9999px'
 
     },
+    
     extend: {},
   },
   plugins: [],

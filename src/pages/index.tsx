@@ -1,5 +1,7 @@
 import { Seo } from "@/ui/component/seo/seo";
+import { Avatar } from "@/ui/design-system/avatar/avatar";
 import { Button } from "@/ui/design-system/button/button";
+import { Logo } from "@/ui/design-system/logo/logo";
 import { Spinner } from "@/ui/design-system/spinner/spinner";
 import { Typographie } from "@/ui/design-system/typographie/typographie";
 import { Inter } from "next/font/google";
@@ -11,11 +13,24 @@ export default function Home() {
   return ( <>
  
     <Seo title="first app react" description="content"/>
-
+    
     <div className="flex items-center gap-4 p-2">
       <Spinner size="small"/>
       <Spinner/>
       <Spinner size="large"/>
+    </div> 
+
+     <div className="flex items-center gap-4 p-2">
+      <Logo size="very-small"/>
+      <Logo size="small"/>
+      <Logo/>
+      <Logo size="large"/>
+    </div>   
+
+    <div className="flex items-center gap-4 p-2">
+      <Avatar size="small" src="/assets/images/alex-suprun-ZHvM3XIOHoE-unsplash.jpg" alt="avatar de arriel"/>
+      <Avatar src="/assets/images/alex-suprun-ZHvM3XIOHoE-unsplash.jpg" alt="avatar de arriel"/>
+      <Avatar size="large" src="/assets/images/photograpge.jpeg" alt="avatar de arriel"/>
     </div>   
 
 
