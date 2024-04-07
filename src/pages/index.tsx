@@ -1,5 +1,6 @@
 import { Seo } from "@/ui/component/seo/seo";
 import { Button } from "@/ui/design-system/button/button";
+import { Spinner } from "@/ui/design-system/spinner/spinner";
 import { Typographie } from "@/ui/design-system/typographie/typographie";
 import { Inter } from "next/font/google";
 import {  RiUser6Fill } from "react-icons/ri";
@@ -11,14 +12,21 @@ export default function Home() {
  
     <Seo title="first app react" description="content"/>
 
-    <div className="flex item-center gap-4 p-8">
-      <Button size="large" variant="accent" icon={{icon: RiUser6Fill }} iconPosition="left"> accent </Button>
-      <Button size="samll" variant="secondary" icon={{icon: RiUser6Fill }} > secondary </Button>
-      <Button size="samll" variant="secondary" > secondary </Button>
-      <Button size="samll" variant="outline"> outline </Button>
-      <Button size="samll" variant="disable" disabled> disable </Button>
+    <div className="flex items-center gap-4 p-2">
+      <Spinner size="small"/>
+      <Spinner/>
+      <Spinner size="large"/>
+    </div>   
 
-      <Button size="samll" variant="ico" icon={{icon: RiUser6Fill }}/> 
+
+    <div className="flex items-center gap-4 p-8">
+      <Button isLoading size="small" variant="accent" icon={{icon: RiUser6Fill }} iconPosition="left"> accent </Button>
+      <Button size="small" variant="secondary" icon={{icon: RiUser6Fill }} > secondary </Button>
+      <Button isLoading size="small" variant="secondary" > secondary </Button>
+      <Button size="small" variant="outline"> outline </Button>
+      <Button size="small" variant="disable" disabled> disable </Button>
+
+      <Button isLoading size="small" variant="ico" icon={{icon: RiUser6Fill }}/> 
     </div>   
 
     <div className="flex item-center gap-4 p-8">
