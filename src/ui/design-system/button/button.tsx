@@ -17,7 +17,7 @@ interface props {
 
 export const Button = ({
   size = "medium",
-  variant,
+  variant = "accent",
   icon,
   iconTheme ="accent",
   iconPosition = "right",

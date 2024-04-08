@@ -33,7 +33,7 @@ export const Avatar = ({
       fill
       src={src}
       alt={alt}
-      className="rounded-full object-cover object-center"
+      className="rounded-full   object-center"
      />
     </div>
   );
