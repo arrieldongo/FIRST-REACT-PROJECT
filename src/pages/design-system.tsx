@@ -18,7 +18,7 @@ export default function DesignSystem(){
   return(
     <>
 
-      <Seo title="first app react" description="content"/>
+      <Seo title="Design System" description="content"/>
 
       <Navigation/>
 
