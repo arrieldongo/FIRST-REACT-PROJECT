@@ -1,6 +1,7 @@
 
 // COMPONENT
 import { Container } from "@/ui/component/container/container";
+import { Footer } from "@/ui/component/navigation/footer";
 import { Navigation } from "@/ui/component/navigation/navigation";
 import { Seo } from "@/ui/component/seo/seo";
 
@@ -82,6 +83,8 @@ export default function DesignSystem(){
         </div> 
 
       </Container>  
+
+      <Footer/>
 
 
     </>

@@ -1,3 +1,4 @@
+import { Footer } from "@/ui/component/navigation/footer";
 import { Navigation } from "@/ui/component/navigation/navigation";
 import { Seo } from "@/ui/component/seo/seo";
 import { Inter } from "next/font/google";
@@ -10,7 +11,8 @@ export default function Home() {
     <Seo title="Coder Monkeys" description="content"/>
 
     <Navigation/>
-
+    
+    <Footer/>
   </>
    
   );
