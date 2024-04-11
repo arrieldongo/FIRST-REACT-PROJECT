@@ -4,8 +4,12 @@ import Image from "next/image";
 import {footerLinks} from "./app-links";
 import { v4 as uuidv4 } from 'uuid';
 import { ActiveLink } from "./active-link";
-import { AppLinks, FooterLinks } from "@/types/app-links";
+import { AppLinks, FooterLinks } from  "@/types/app-links";
 import { TypeLinks } from "@/lib/type-links";
+import { SocialNetworksButtons } from "./social-networks-buttons";
+
+
+
 
 export const Footer = () => {
 
@@ -61,7 +65,9 @@ export const Footer = () => {
               {` - Remote monkey SASU`}
             </Typographie>
             
-            <div className=""></div>
+            <div className="">
+              <SocialNetworksButtons theme="gray"/>
+            </div>
           </div>
         </Container>
 

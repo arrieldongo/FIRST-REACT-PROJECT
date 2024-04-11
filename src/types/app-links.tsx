@@ -1,7 +1,11 @@
-export interface AppLinks {
+import { TypeLink } from "@/lib/type-links";
+import { IconType } from "react-icons";
+
+export interface  AppLinks {
   label: string;
   baseUrl: string;
-  type: string;
+  type: TypeLink;
+  icon?: IconType;
 };
 
 export interface FooterLinks {
