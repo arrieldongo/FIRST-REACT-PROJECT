@@ -1,6 +1,6 @@
 import { AppLinks } from "@/types/app-links";
 
-export const footerApplicationLinks: AppLinks[] = [
+const footerApplicationLinks: AppLinks[] = [
 
   {
     label: "Accueil",
@@ -29,22 +29,22 @@ const footerUsersLinks: AppLinks[] = [
 
   {
     label: "Mon espace",
-    baseUrl: "/",
+    baseUrl: "/@",
     type:"internal"
   },
   {
     label: "Connexion",
-    baseUrl: "/",
+    baseUrl: "/@@",
     type:"internal"
   },
   {
     label: "Inscription",
-    baseUrl: "/",
+    baseUrl: "/@@",
     type:"internal"
   },
   {
     label: "Mot de passe oublié",
-    baseUrl: "/",
+    baseUrl: "/@@@",
     type:"internal"
   },
 
@@ -54,22 +54,22 @@ const footerInformationsLinks: AppLinks[] = [
 
   {
     label: "CGU",
-    baseUrl: "/",
+    baseUrl: "/&",
     type:"internal"
   },
   {
     label: "Confidentialité",
-    baseUrl: "/",
+    baseUrl: "/&&",
     type:"internal"
   },
   {
     label: "À propos",
-    baseUrl: "/",
+    baseUrl: "/&&&",
     type:"internal"
   },
   {
     label: "Contact",
-    baseUrl: "/",
+    baseUrl: "/&&&&",
     type:"internal"
   },
 
@@ -95,3 +95,22 @@ const footerSocialNetworksLinks: AppLinks[] = [
   
 
 ];  
+
+export const footerLinks = [
+  {
+    label: "App",
+    links: footerApplicationLinks,
+  },
+  {
+    label: "Utilisateurs ",
+    links: footerUsersLinks,
+  },
+  {
+    label: "Informations",
+    links: footerInformationsLinks,
+  },
+  {
+    label: "Réseaux ",
+    links: footerSocialNetworksLinks,
+  },
+]
