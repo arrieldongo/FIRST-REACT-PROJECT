@@ -21,6 +21,8 @@ export const SocialNetworksButtons =({className, theme="accent"}: props) => {
         icon={{ icon: 
           socialNetworks.icon ? socialNetworks.icon : RiFacebookBoxFill
         }}
+        baseUrl={socialNetworks.baseUrl}
+        linkType={socialNetworks.type }
       />
   ))
 

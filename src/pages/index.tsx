@@ -1,6 +1,6 @@
-import { Footer } from "@/ui/component/navigation/footer";
-import { Navigation } from "@/ui/component/navigation/navigation";
+import { Layout } from "@/ui/component/layout/layout";
 import { Seo } from "@/ui/component/seo/seo";
+import { LandingPageContainer } from "@/ui/module/landing-page/landing-page.container";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -10,9 +10,10 @@ export default function Home() {
   
     <Seo title="Coder Monkeys" description="content"/>
 
-    <Navigation/>
+    <Layout>
+      <LandingPageContainer/>
+    </Layout>
     
-    <Footer/>
   </>
    
   );
