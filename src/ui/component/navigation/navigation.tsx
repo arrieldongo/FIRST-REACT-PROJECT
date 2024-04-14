@@ -40,8 +40,8 @@ import { ActiveLink } from "./active-link";
             </Typographie>
 
             <div className="flex items-center gap-2">
-              <Button size="small">Connexion</Button>
-              <Button size="small" variant="secondary">Rejoindre</Button>
+              <Button baseUrl="/connexion" size="small">Connexion</Button>
+              <Button baseUrl="/connexion/inscription" size="small" variant="secondary">Rejoindre</Button>
             </div>
           </div>
 
