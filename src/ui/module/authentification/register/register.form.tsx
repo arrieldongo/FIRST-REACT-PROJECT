@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const RegisterForm = ({ form }: Props) => {
-
+   
   const {
     errors,
     onSubmit,

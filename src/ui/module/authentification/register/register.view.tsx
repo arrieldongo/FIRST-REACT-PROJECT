@@ -44,7 +44,6 @@ export const RegisterView = ({ form}: Props) => {
           </div>
 
           <RegisterForm form={form} />
-
         </Box>
       </div>
     </Container>
