@@ -1,13 +1,15 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { RegisterView } from "./register.view"
 import { RegisterFormFielsType } from "@/types/forms";
-import { useState } from "react";
 import { firebaseCreateUser } from "@/api/authentification";
 import { toast } from 'react-toastify';
+import { UseToggle } from "@/hooks/use-toggle";
+import { Button } from "@/ui/design-system/button/button";
 
 
 export const RegisterContainer = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const{value: isLoading, setValue: setIsLoading, toggle } = UseToggle({initial: false});
+  console.log(isLoading)
 
   const {
     handleSubmit,
@@ -46,6 +48,7 @@ export const RegisterContainer = () => {
 
   return (
     <>
+      <Button action={toggle}></Button>
       <RegisterView
         form={{
           errors,
