@@ -3,34 +3,34 @@ import 'tailwindcss/tailwind.css';
 
 
 
-interface props{
-  variant?: 
-    | "display" 
-    | "h1" 
-    | "h2" 
-    | "h3" 
-    | "h4" 
-    | "h5" 
-    | "lead" 
-    | "Body-lg" 
-    | "Body-base" 
-    | "Body-sm" 
-    | "caption-1" 
-    | "caption-2" 
-    | "caption-3" 
-    | "caption-4";
-  
-  component?: 
-    | "h1" 
-    | "h2" 
-    | "h3" 
-    | "h4" 
-    | "h5" 
-    | "div" 
-    | "p" 
-    | "span";
+interface props {
+  variant?:
+  | "display"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "lead"
+  | "Body-lg"
+  | "Body-base"
+  | "Body-sm"
+  | "caption-1"
+  | "caption-2"
+  | "caption-3"
+  | "caption-4";
 
-  theme?: "black" | "gray" | "white" | "primary" | "secondary";
+  component?:
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "div"
+  | "p"
+  | "span";
+
+  theme?: "black" | "gray" | "white" | "primary" | "secondary" | "danger" | "success" | "warning";
   weight?: "regular" | "medium";
   className?: string
   children: React.ReactNode;
@@ -38,14 +38,14 @@ interface props{
 
 export const Typographie = ({
   variant = "h3",
-   component: Component = "div",
-   theme = "black", 
-   weight = "regular",
-   className,
-   children
-  
-  
-  }:props) => {
+  component: Component = "div",
+  theme = "black",
+  weight = "regular",
+  className,
+  children
+
+
+}: props) => {
 
   let variantStyles: string = "", colorStyles: string = "";
 
@@ -86,7 +86,7 @@ export const Typographie = ({
     case "Body-base":
       variantStyles = "text-base";
       break;
-    
+
     case "Body-sm":
       variantStyles = "text-sm";
       break;
@@ -111,43 +111,55 @@ export const Typographie = ({
   switch (theme) {
 
     case "black": //default
-      colorStyles =  "text-gray";
+      colorStyles = "text-gray";
       break;
 
     case "gray":
-      colorStyles =  "text-gray-700";
+      colorStyles = "text-gray-700";
       break;
 
     case "white":
-      colorStyles =  "text-white";
+      colorStyles = "text-white";
       break;
 
     case "primary":
-      colorStyles =  "text-primary";
+      colorStyles = "text-primary";
       break;
 
     case "secondary":
-      colorStyles =  "text-secondary";
+      colorStyles = "text-secondary";
       break;
-  
-  default:
-    break;
+
+    case "danger":
+      colorStyles = "text-alert-danger";
+      break;
+
+    case "success":
+      colorStyles = "text-alert-success";
+      break;
+
+    case "warning":
+      colorStyles = "text-alert-warning";
+      break;
+
+    default:
+      break;
 
   }
 
 
- return <Component 
-  className= {
-    clsx(
-      variantStyles,
-      colorStyles,
-      weight === "medium" && "font-medium",
-      className,
-    
-    )} >
+  return <Component
+    className={
+      clsx(
+        variantStyles,
+        colorStyles,
+        weight === "medium" && "font-medium",
+        className,
+
+      )} >
 
 
     {children}
 
- </Component>
+  </Component>
 }

@@ -16,8 +16,10 @@ interface props {
   children?: React.ReactNode;
   baseUrl?: string;
   linkType?: TypeLink;
+  fullWhith?: boolean;
+  type?: "button" | "submit";
   action?: Function;
-
+  
 }
 
 export const Button = ({
@@ -31,7 +33,10 @@ export const Button = ({
   children,
   baseUrl,
   linkType = "internal",
+  fullWhith= false,
+  type= "button",
   action = () => {},
+  
 
 }:props) => {
  let variantStyles: string ="", sizeStyles: string ="", icoSize: number=0;
@@ -138,11 +143,10 @@ export const Button = ({
 
   const buttonElement = (
       <button
-      type="button"
-      className= {clsx(variantStyles, sizeStyles, icoSize, isLoading && "cursor-wait", "relative animate")}
-       
+      type={type}
+      className= {clsx(variantStyles, sizeStyles, icoSize, isLoading && "cursor-not-allowed", fullWhith && "w-full", "relative animate")}
       onClick={handleClick}
-      disabled={disabled}
+      disabled={disabled || isLoading ? true : false}
     >
       {buttonContent}
     </button>
