@@ -6,10 +6,10 @@ import Link from "next/link";
 
 interface props {
 
-  size?: "small" | "medium" |"large";
-  variant?: "accent" | "secondary" |"outline"| "disable" |"ico"|"succes";
-  icon?:IconProps;
-  iconTheme?: "accent" | "secondary" |"gray";
+  size?: "small" | "medium" | "large";
+  variant?: "accent" | "secondary" | "outline" | "disable" | "ico" | "succes" | "danger";
+  icon?: IconProps;
+  iconTheme?: "accent" | "secondary" | "gray";
   iconPosition?: "left" | "right";
   disabled?: boolean;
   isLoading?: boolean;
@@ -19,83 +19,84 @@ interface props {
   fullWhith?: boolean;
   type?: "button" | "submit";
   action?: Function;
-  
+
 }
 
 export const Button = ({
   size = "medium",
   variant = "accent",
   icon,
-  iconTheme ="accent",
+  iconTheme = "accent",
   iconPosition = "right",
   disabled,
   isLoading,
   children,
   baseUrl,
   linkType = "internal",
-  fullWhith= false,
-  type= "button",
-  action = () => {},
-  
+  fullWhith = false,
+  type = "button",
+  action = () => { },
 
-}:props) => {
- let variantStyles: string ="", sizeStyles: string ="", icoSize: number=0;
+
+}: props) => {
+  let variantStyles: string = "", sizeStyles: string = "", icoSize: number = 0;
 
   switch (variant) {
 
     case "accent": //default
-      variantStyles ="bg-primary hover:bg-primary-400 text-white rounded";
+      variantStyles = "bg-primary hover:bg-primary-400 text-white rounded";
       break;
 
     case "secondary":
-      variantStyles ="bg-primary-200 hover:bg-primary-300/50 text-primary rounded";
+      variantStyles = "bg-primary-200 hover:bg-primary-300/50 text-primary rounded";
       break;
 
     case "outline":
-      variantStyles ="bg-white hover:bg-gray-400/50 border border-gray-400 text-gray-900 rounded";
+      variantStyles = "bg-white hover:bg-gray-400/50 border border-gray-400 text-gray-900 rounded";
       break;
 
     case "disable":
-      variantStyles ="bg-gray-400 border border-gray-500 text-gray-600 cursor-not-allowed rounded";
+      variantStyles = "bg-gray-400 border border-gray-500 text-gray-600 cursor-not-allowed rounded";
       break;
 
     case "succes":
-      variantStyles ="bg-secondary hover:bg-secondary-400 text-white rounded";
+      variantStyles = "bg-secondary hover:bg-secondary-400 text-white rounded";
+      break;
+
+    case "danger":
+      variantStyles = "bg-alert-danger hover:bg-alert-danger/75 text-white rounded";
       break;
 
     case "ico":
-      if( iconTheme === "accent"){
+      if (iconTheme === "accent") {
         variantStyles = "bg-primary hover:bg-primary-400 text-white rounded-full";
       }
-      if( iconTheme === "secondary"){
+      if (iconTheme === "secondary") {
         variantStyles = "bg-primary-200 hover:bg-primary-300/50 text-primary rounded-full";
       }
-      if( iconTheme === "gray"){
+      if (iconTheme === "gray") {
         variantStyles = "bg-gray-800 hover:bg-gray-700 text-white rounded-full";
       }
-    break;
+      break;
   }
 
   switch (size) {
     case "small":
-      sizeStyles= `text-caption_3 font-medium ${
-        variant === "ico" ? "flex items-center justify-center w-[40px] h-[40px]" : "px-[14px] py-[12px]"
-      }`;
-      icoSize= 18;
+      sizeStyles = `text-caption_3 font-medium ${variant === "ico" ? "flex items-center justify-center w-[40px] h-[40px]" : "px-[14px] py-[12px]"
+        }`;
+      icoSize = 18;
       break;
 
     case "medium": //default
-      sizeStyles= `text-caption_2 font-medium ${
-        variant === "ico" ? "flex items-center justify-center w-[50px] h-[50px]" : "px-[18px] py-[15px]"
-      }`;
-      icoSize= 20;
+      sizeStyles = `text-caption_2 font-medium ${variant === "ico" ? "flex items-center justify-center w-[50px] h-[50px]" : "px-[18px] py-[15px]"
+        }`;
+      icoSize = 20;
       break;
 
     case "large":
-      sizeStyles= `text-caption_1 font-medium ${
-        variant === "ico" ? "flex items-center justify-center w-[60px] h-[60px]" : "px-[22px] py-[18px]"
-      }`;
-      icoSize= 24;
+      sizeStyles = `text-caption_1 font-medium ${variant === "ico" ? "flex items-center justify-center w-[60px] h-[60px]" : "px-[22px] py-[18px]"
+        }`;
+      icoSize = 24;
       break;
 
 
@@ -103,7 +104,7 @@ export const Button = ({
   }
 
   const handleClick = () => {
-    if(action){
+    if (action) {
       action()
     }
   }
@@ -114,37 +115,37 @@ export const Button = ({
 
         <div className="absolute inset-0 flex items-center justify-center">
           {variant === "accent" || variant === "ico" ?
-            (<Spinner variant="white"/>) 
-          :(
-            <Spinner size="small"/>)}
+            (<Spinner variant="white" />)
+            : (
+              <Spinner size="small" />)}
         </div>
 
       )}
 
-      <div className= {clsx(isLoading && "invisible")}>
+      <div className={clsx(isLoading && "invisible")}>
 
         {icon && variant === "ico" ? (
-          <icon.icon size={icoSize}/>
+          <icon.icon size={icoSize} />
         ) : (
 
-        <div className={clsx( icon && "flex items-center gap-2")}>
-          {icon && iconPosition === "left" && (
-          <icon.icon size={icoSize}/>
-          )}
-          {children}
-          {icon && iconPosition === "right" && (
-          <icon.icon size={icoSize}/>
-          )}
-        </div>)}
-        
+          <div className={clsx(icon && "flex items-center gap-2")}>
+            {icon && iconPosition === "left" && (
+              <icon.icon size={icoSize} />
+            )}
+            {children}
+            {icon && iconPosition === "right" && (
+              <icon.icon size={icoSize} />
+            )}
+          </div>)}
+
       </div>
     </>
   );
 
   const buttonElement = (
-      <button
+    <button
       type={type}
-      className= {clsx(variantStyles, sizeStyles, icoSize, isLoading && "cursor-not-allowed", fullWhith && "w-full", "relative animate")}
+      className={clsx(variantStyles, sizeStyles, icoSize, isLoading && "cursor-not-allowed", fullWhith && "w-full", "relative animate")}
       onClick={handleClick}
       disabled={disabled || isLoading ? true : false}
     >
@@ -152,8 +153,8 @@ export const Button = ({
     </button>
   )
 
-  if (baseUrl){
-    if(linkType === TypeLinks.EXTERNAL){
+  if (baseUrl) {
+    if (linkType === TypeLinks.EXTERNAL) {
       return (
         < a href={baseUrl} target="_blanc">
           {buttonElement}
@@ -162,7 +163,7 @@ export const Button = ({
     } else {
       return <Link href={baseUrl}> {buttonElement} </Link>
     }
-    return 
+    return
   }
 
   return buttonElement

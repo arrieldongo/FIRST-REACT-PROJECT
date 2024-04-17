@@ -37,13 +37,19 @@ export const LoginView =  ({ form}: Props) => {
                 Tu n’as pas de compte ? 
               </Typographie>
               <Typographie variant="caption-4" component="span" theme="primary">
-                <Link href="/connexion" >S’inscrire</Link>
+                <Link href="/connexion/inscription" >S’inscrire</Link>
               </Typographie> 
             </div>
 
           </div>
 
           <LoginForm form={form}/>
+
+          <Typographie variant="caption-4" theme="primary">
+            <Link href="/connexion/mot-de-passe-perdu" className="flex justify-center">
+              Mot de passe perdu ?
+            </Link>
+          </Typographie>
           
       </Box>
     </div>

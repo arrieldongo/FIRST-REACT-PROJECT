@@ -10,7 +10,7 @@ interface Props {
   form: FormsType;
 }
 
-export const RegisterView = ({ form}: Props) => {
+export const RegisterView = ({ form }: Props) => {
   return (
     <Container className="grid grid-cols-2 gap-20 mt-10">
       <div className="flex items-center">
@@ -44,6 +44,22 @@ export const RegisterView = ({ form}: Props) => {
           </div>
 
           <RegisterForm form={form} />
+
+          <Typographie variant="caption-4" theme="gray" className="max-w-md mx-auto space-y-1 text-center">
+            <div>
+              En t’inscrivant, tu acceptes les
+            </div>
+            <div>
+              <Link href="/#" className="text-gray">
+                Conditions d'utilisation
+              </Link>
+              {" "} et la {" "}
+              <Link href="/#" className="text-gray">
+                Politique de confidentialité.
+              </Link>
+              .
+            </div>
+          </Typographie>
         </Box>
       </div>
     </Container>

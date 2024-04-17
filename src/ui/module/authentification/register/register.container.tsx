@@ -2,9 +2,9 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { RegisterView } from "./register.view"
 import { RegisterFormFielsType } from "@/types/forms";
 import { firebaseCreateUser } from "@/api/authentification";
-import { toast } from 'react-toastify';
 import { UseToggle } from "@/hooks/use-toggle";
 import { Button } from "@/ui/design-system/button/button";
+import { toast } from "react-toastify";
 
 
 export const RegisterContainer = () => {
@@ -61,4 +61,4 @@ export const RegisterContainer = () => {
     </>
 
   );
-} 
+}  
