@@ -1,15 +1,12 @@
-import { LoginView } from "./login.view"
-import { SubmitHandler, useForm } from "react-hook-form";
-import { LoginFormFielsType } from "@/types/forms";
 import { UseToggle } from "@/hooks/use-toggle";
+import { LoginFormFielsType } from "@/types/forms";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { LoginView } from "./login.view";
 
 import { toast } from 'react-toastify';
 
-import { auth } from "@/config/fireBase-config";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { firebaseSignInUser } from "@/api/authentification";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 
 export const LoginContainer = () => {
 
@@ -23,23 +20,6 @@ export const LoginContainer = () => {
     setError,
     reset,
   } = useForm<LoginFormFielsType>();
-
- useEffect(() => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/auth.user
-      const uid = user.uid;
-      console.log("user", user)
-      // ...
-    } else {
-      console.log("tu n'es pas connecté")
-
-      // User is signed out
-      // ...
-    }
-  });
- },[]);
 
   const handleSignInUser = async ({email, password}: LoginFormFielsType) => {
 
