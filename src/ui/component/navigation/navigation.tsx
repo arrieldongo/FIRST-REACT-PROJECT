@@ -5,14 +5,21 @@ import { Button } from "@/ui/design-system/button/button";
 import Link from "next/link";
 import { ActiveLink } from "./active-link";
 import { useAuth } from "@/context/AuthUserContext";
+import { AccountAvatarNavigationLink } from "./account-avatar-link";
 
 interface props { }
 
 export const Navigation = ({ }: props) => {
 
-  const { authUser, authUserIsLoading } = useAuth();
-  console.log('authUser:', authUser);
-  console.log('authUserIsLoading:', authUserIsLoading);
+  const { authUser } = useAuth();
+  
+
+  const authentificationSysthem = (
+    <div className="flex items-center gap-2">
+      <Button baseUrl="/connexion" size="small">Connexion</Button>
+      <Button baseUrl="/connexion/inscription" size="small" variant="secondary">Rejoindre</Button>
+    </div>
+  )
 
   return (
     <div className="border-b-2 border-gray-400">
@@ -45,10 +52,8 @@ export const Navigation = ({ }: props) => {
             <Link href="/contacts">Contacts</Link>
           </Typographie>
 
-          <div className="flex items-center gap-2">
-            <Button baseUrl="/connexion" size="small">Connexion</Button>
-            <Button baseUrl="/connexion/inscription" size="small" variant="secondary">Rejoindre</Button>
-          </div>
+          {!authUser ? authentificationSysthem : <AccountAvatarNavigationLink/> }
+
         </div>
 
       </Container>

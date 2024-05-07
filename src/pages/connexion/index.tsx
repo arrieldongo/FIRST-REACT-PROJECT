@@ -2,7 +2,7 @@ import { Layout } from "@/ui/component/layout/layout";
 import { Seo } from "@/ui/component/seo/seo";
 import { LoginContainer } from "@/ui/module/authentification/login/login.container";
 
-export default function Connection() {
+export default function AccountUser() {
   return ( <>
   
     <Seo 

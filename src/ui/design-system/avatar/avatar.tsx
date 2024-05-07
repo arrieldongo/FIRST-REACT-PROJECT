@@ -31,7 +31,7 @@ export const Avatar = ({
     <div className= {clsx(sizeStyles, "bg-gray-400 rounded-full relative")}>
      <Image
       fill
-      src={src}
+      src={src ? src : "/assets/svg/cake.svg"}
       alt={alt}
       className="rounded-full   object-center"
      />

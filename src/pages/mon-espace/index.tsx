@@ -4,7 +4,7 @@ import { Seo } from "@/ui/component/seo/seo";
 import { UserAccountContainer } from "@/ui/module/user-profile/user-account/user-account.container";
 
 
-export default function Connection() {
+export default function MonCompte() {
   return ( <>
   
     <Seo title="Mon espace" description="Espace utilisateur"/>

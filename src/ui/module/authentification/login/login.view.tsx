@@ -10,22 +10,22 @@ interface Props {
   form: FormsType;
 }
 
-export const LoginView =  ({ form}: Props) => {
-  return(
+export const LoginView = ({ form }: Props) => {
+  return (
     <Container className="grid grid-cols-2 gap-20 mt-10">
-    <div className="flex items-center">
-      <div className="relative w-full h-[531px]">
-        < Image
-          fill
-          src="/assets/svg/login.svg"
-          alt="description de l'illustration"
-          className="object-scale-down"
-        />
+      <div className="flex items-center">
+        <div className="relative w-full h-[531px]">
+          < Image
+            fill
+            src="/assets/svg/login.svg"
+            alt="description de l'illustration"
+            className="object-scale-down"
+          />
+        </div>
       </div>
-    </div>
-    
-    <div className="flex items-center">
-      <Box padding_y="py-5">
+
+      <div className="flex items-center">
+        <Box padding_y="py-5">
           <div className="flex items-center justify-between">
 
             <Typographie variant="h5" component="h1">
@@ -34,25 +34,25 @@ export const LoginView =  ({ form}: Props) => {
 
             <div className="flex items-center gap-2">
               <Typographie variant="caption-4" component="span" theme="gray">
-                Tu n’as pas de compte ? 
+                Tu n’as pas de compte ?
               </Typographie>
               <Typographie variant="caption-4" component="span" theme="primary">
                 <Link href="/connexion/inscription" >S’inscrire</Link>
-              </Typographie> 
+              </Typographie>
             </div>
 
           </div>
 
-          <LoginForm form={form}/>
+          <LoginForm form={form} />
 
           <Typographie variant="caption-4" theme="primary">
             <Link href="/connexion/mot-de-passe-perdu" className="flex justify-center">
               Mot de passe perdu ?
             </Link>
           </Typographie>
-          
-      </Box>
-    </div>
-  </Container>
+
+        </Box>
+      </div>
+    </Container>
   );
 }

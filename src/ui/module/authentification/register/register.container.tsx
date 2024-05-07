@@ -1,11 +1,12 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { RegisterView } from "./register.view"
 import { RegisterFormFielsType } from "@/types/forms";
-import { firebaseCreateUser, sendEmailVerificationProcedure } from "@/api/authentification";
+
 import { UseToggle } from "@/hooks/use-toggle";
 import { Button } from "@/ui/design-system/button/button";
 import { toast } from "react-toastify";
 import { firestoreCreateDocument } from "@/api/firestore";
+import { firebaseCreateUser, sendEmailVerificationProcedure } from "@/api/authentification";
 
 
 export const RegisterContainer = () => {
