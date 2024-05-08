@@ -4,6 +4,7 @@ import { Typographie } from "../typographie/typographie";
 interface Props {
   isLoading: boolean;
   placeholder: string;
+  rows?: number;
   type?: "text" | "email" | "password";
   register: any;
   errors: any;
@@ -11,13 +12,13 @@ interface Props {
   id: string;
   required?: boolean;
   isAutoComplete?: boolean;
-  label?:string;
+  label?: string;
 }
 
-export const Input = ({
+export const Textarea = ({
   isLoading,
   placeholder,
-  type = "text",
+  rows = 5,
   register,
   errors,
   errorMsg = "Il y'a une erreur",
@@ -26,10 +27,7 @@ export const Input = ({
   isAutoComplete = false,
   label,
 }: Props) => {
-
-
   return (
-
     <div className="space-y-2">
 
       {label && (
@@ -38,12 +36,13 @@ export const Input = ({
         </Typographie>
       )}
 
-      <input type={type}
+      <textarea
+        rows={rows}
         placeholder={placeholder}
         className={clsx(
-          isLoading && "cursor-not-allowed",
+          isLoading ? "bg-gray-300 focus:ring-gray-300 cursor-not-allowed" : "bg-white",
           errors[id] ? "placeholder-alert-danger text-alert-danger" : "placeholder-gray-600",
-          "w-full p-4 font-light border border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-primary"
+          "w-full p-4 font-light border rounded focus:outline-none focus:ring-1 focus:ring-primary border-gray-400"
         )}
         disabled={isLoading}
         {...register(id, {
@@ -60,8 +59,6 @@ export const Input = ({
           {errors[id]?.message}
         </Typographie>
       )}
-
     </div>
-
-  );
+  )
 }

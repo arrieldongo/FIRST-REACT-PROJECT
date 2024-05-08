@@ -10,7 +10,7 @@ import { firebaseCreateUser, sendEmailVerificationProcedure } from "@/api/authen
 
 
 export const RegisterContainer = () => {
-  const { value: isLoading, setValue: setIsLoading, toggle } = UseToggle({ initial: false });
+  const { value: isLoading, setValue: setIsLoading } = UseToggle({ initial: false });
   console.log(isLoading)
 
   const {
@@ -72,7 +72,6 @@ export const RegisterContainer = () => {
 
   return (
     <>
-      <Button action={toggle}></Button>
       <RegisterView
         form={{
           errors,

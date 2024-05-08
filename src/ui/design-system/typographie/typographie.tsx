@@ -30,7 +30,7 @@ interface props {
   | "p"
   | "span";
 
-  theme?: "black" | "gray" | "white" | "primary" | "secondary" | "danger" | "success" | "warning";
+  theme?: "black" | "gray" | "gray-600"| "white" | "primary" | "secondary" | "danger" | "success" | "warning";
   weight?: "regular" | "medium";
   className?: string
   children: React.ReactNode;
@@ -116,6 +116,10 @@ export const Typographie = ({
 
     case "gray":
       colorStyles = "text-gray-700";
+      break;
+
+    case "gray-600":
+      colorStyles = "text-gray-600";
       break;
 
     case "white":

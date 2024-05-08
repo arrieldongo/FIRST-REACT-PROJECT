@@ -11,6 +11,7 @@ export const OnBoardingView = ({ getCurrentStep,
 
   if (getCurrentStep()?.component) {
 
+    //Affiche dynamique les différentes vues en fonction de l'étape en cours
     return (
       <div>
         {

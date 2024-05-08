@@ -28,6 +28,8 @@ export const firebaseSignInUser = async (email: string, password: string) => {
   } catch (error) {
 
     const firebaseError = error as FirebaseError
+
+    
     return {
       error: {
         code: firebaseError.code,
